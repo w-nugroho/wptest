@@ -1,0 +1,16 @@
+
+# BEGIN WordPress
+# Arahan (baris) antara `BEGIN WordPress` dan `END WordPress`
+# dihasilkan secara dinamis, dan hanya dapat dimodifikasi melalui filter WordPress.
+# Setiap perubahan pada arahan di antara penanda berikut akan ditimpa.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wordpress/
+RewriteRule ^index\.php$ - [L]
+RewriteRule ^(.+.(?:jpe?g|gif|png)) /wordpress/wp-content/plugins/wp-retina-2x/wr2x_image.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wordpress/index.php [L]
+</IfModule>
+
+# END WordPress
